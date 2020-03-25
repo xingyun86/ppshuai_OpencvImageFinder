@@ -73,15 +73,21 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\$(TargetName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\$(TargetName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\$(TargetName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\$(TargetName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -97,11 +103,11 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)libopencv-4.2.0-x86_64/lib/$(Platform)/</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_calib3d420.lib;opencv_core420.lib;opencv_dnn420.lib;opencv_features2d420.lib;opencv_flann420.lib;opencv_gapi420.lib;opencv_highgui420.lib;opencv_imgcodecs420.lib;opencv_imgproc420.lib;opencv_ml420.lib;opencv_objdetect420.lib;opencv_photo420.lib;opencv_stitching420.lib;opencv_video420.lib;opencv_videoio420.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)libopencv-4.2.0-x86_64/lib/$(Platform)/$(Configuration)/</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_calib3d420d.lib;opencv_core420d.lib;opencv_dnn420d.lib;opencv_features2d420d.lib;opencv_flann420d.lib;opencv_gapi420d.lib;opencv_highgui420d.lib;opencv_imgcodecs420d.lib;opencv_imgproc420d.lib;opencv_ml420d.lib;opencv_objdetect420d.lib;opencv_photo420d.lib;opencv_stitching420d.lib;opencv_video420d.lib;opencv_videoio420d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>XCOPY $(SolutionDir)libopencv-4.2.0-x86_64\bin\$(Platform)\* $(OutDir) /E /F /Y</Command>
+      <Command>XCOPY $(SolutionDir)libopencv-4.2.0-x86_64\bin\$(Platform)\$(Configuration)\* $(OutDir) /E /F /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -118,11 +124,11 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)libopencv-4.2.0-x86_64/lib/$(Platform)/</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_calib3d420.lib;opencv_core420.lib;opencv_dnn420.lib;opencv_features2d420.lib;opencv_flann420.lib;opencv_gapi420.lib;opencv_highgui420.lib;opencv_imgcodecs420.lib;opencv_imgproc420.lib;opencv_ml420.lib;opencv_objdetect420.lib;opencv_photo420.lib;opencv_stitching420.lib;opencv_video420.lib;opencv_videoio420.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)libopencv-4.2.0-x86_64/lib/$(Platform)/$(Configuration)/</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_calib3d420d.lib;opencv_core420d.lib;opencv_dnn420d.lib;opencv_features2d420d.lib;opencv_flann420d.lib;opencv_gapi420d.lib;opencv_highgui420d.lib;opencv_imgcodecs420d.lib;opencv_imgproc420d.lib;opencv_ml420d.lib;opencv_objdetect420d.lib;opencv_photo420d.lib;opencv_stitching420d.lib;opencv_video420d.lib;opencv_videoio420d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>XCOPY $(SolutionDir)libopencv-4.2.0-x86_64\bin\$(Platform)\* $(OutDir) /E /F /Y</Command>
+      <Command>XCOPY $(SolutionDir)libopencv-4.2.0-x86_64\bin\$(Platform)\$(Configuration)\* $(OutDir) /E /F /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -143,11 +149,11 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)libopencv-4.2.0-x86_64/lib/$(Platform)/</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)libopencv-4.2.0-x86_64/lib/$(Platform)/$(Configuration)/</AdditionalLibraryDirectories>
       <AdditionalDependencies>opencv_calib3d420.lib;opencv_core420.lib;opencv_dnn420.lib;opencv_features2d420.lib;opencv_flann420.lib;opencv_gapi420.lib;opencv_highgui420.lib;opencv_imgcodecs420.lib;opencv_imgproc420.lib;opencv_ml420.lib;opencv_objdetect420.lib;opencv_photo420.lib;opencv_stitching420.lib;opencv_video420.lib;opencv_videoio420.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>XCOPY $(SolutionDir)libopencv-4.2.0-x86_64\bin\$(Platform)\* $(OutDir) /E /F /Y</Command>
+      <Command>XCOPY $(SolutionDir)libopencv-4.2.0-x86_64\bin\$(Platform)\$(Configuration)\* $(OutDir) /E /F /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -168,11 +174,11 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)libopencv-4.2.0-x86_64/lib/$(Platform)/</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)libopencv-4.2.0-x86_64/lib/$(Platform)/$(Configuration)/</AdditionalLibraryDirectories>
       <AdditionalDependencies>opencv_calib3d420.lib;opencv_core420.lib;opencv_dnn420.lib;opencv_features2d420.lib;opencv_flann420.lib;opencv_gapi420.lib;opencv_highgui420.lib;opencv_imgcodecs420.lib;opencv_imgproc420.lib;opencv_ml420.lib;opencv_objdetect420.lib;opencv_photo420.lib;opencv_stitching420.lib;opencv_video420.lib;opencv_videoio420.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>XCOPY $(SolutionDir)libopencv-4.2.0-x86_64\bin\$(Platform)\* $(OutDir) /E /F /Y</Command>
+      <Command>XCOPY $(SolutionDir)libopencv-4.2.0-x86_64\bin\$(Platform)\$(Configuration)\* $(OutDir) /E /F /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
